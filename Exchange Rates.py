@@ -41,7 +41,7 @@ else:
 url= Request("https://www.investing.com/currencies/usd-lkr", headers={'User-Agent': 'Mozilla/5.0'})
 data = urlopen(url).read()
 print(">> Running...")
-soup = BeautifulSoup(data, features = "lxml")
+soup = BeautifulSoup(data, features = "html5lib")
 print_s(">> Done!\n\n")
 t=soup.find('span',{'class':'arial_26 inlineblock pid-2151-last'})
 print_f(">> (USD) Price : "),print_s(t.text + " (LKR)")
